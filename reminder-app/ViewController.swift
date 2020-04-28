@@ -42,7 +42,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //            return 0
 //        }
         
-        return 1000
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,6 +66,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //set the contents
         myCell.textLabel?.text = "This is row number \(indexPath.row)"
+        myCell.imageView?.image = UIImage(named: "clock")
+        myCell.accessoryType = .disclosureIndicator
+        myCell.detailTextLabel?.text = "This is some label text"
         
         return myCell
     }
