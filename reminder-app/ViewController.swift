@@ -11,54 +11,66 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        switch section {
-        case 0:
-            return "Daily Tasks"
-        case 1:
-            return "Weekly Tasks"
-        case 2:
-            return "Monthly Tasks"
-        default:
-            return nil
-        }
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//
+//        switch section {
+//        case 0:
+//            return "Daily Tasks"
+//        case 1:
+//            return "Weekly Tasks"
+//        case 2:
+//            return "Monthly Tasks"
+//        default:
+//            return nil
+//        }
+//    }
     
     //Table View Data Source Methods
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 3
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return dailyTask.count
-        case 1:
-            return weeklyTask.count
-        case 2:
-            return monthlyTask.count
-        default:
-            return 0
-        }
+//        switch section {
+//        case 0:
+//            return dailyTask.count
+//        case 1:
+//            return weeklyTask.count
+//        case 2:
+//            return monthlyTask.count
+//        default:
+//            return 0
+//        }
+        
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
+//        let cell = UITableViewCell()
+//
+//        switch indexPath.section {
+//        case 0:
+//            cell.textLabel?.text = dailyTask[indexPath.row]
+//        case 1:
+//            cell.textLabel?.text = weeklyTask[indexPath.row]
+//        case 2:
+//            cell.textLabel?.text = monthlyTask[indexPath.row]
+//        default:
+//            cell.textLabel?.text = "Should hit this"
+//        }
+//
+//        return cell
         
-        switch indexPath.section {
-        case 0:
-            cell.textLabel?.text = dailyTask[indexPath.row]
-        case 1:
-            cell.textLabel?.text = weeklyTask[indexPath.row]
-        case 2:
-            cell.textLabel?.text = monthlyTask[indexPath.row]
-        default:
-            cell.textLabel?.text = "Should hit this"
-        }
+        let myCell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
         
-        return cell
+        //set the contents
+        myCell.textLabel?.text = "This is row number \(indexPath.row)"
+        myCell.imageView?.image = UIImage(named: "clock")
+        myCell.accessoryType = .disclosureIndicator
+        myCell.detailTextLabel?.text = "This is some label text"
+        
+        return myCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
