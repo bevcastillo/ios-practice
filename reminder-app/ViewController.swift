@@ -13,23 +13,47 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var taskTableView: UITableView!
     
     @IBAction func resetList(_ sender: Any) {
-        for i in 0..<self.dailyTask.count {
-            self.dailyTask[i].completed = false
+        
+        //this is to create an alert dialog
+        let confirm = UIAlertController(title: "Reset List?", message: "Are you sure you want to reset this list?", preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive){
+            action in
+            
+            //this is to reset all the checked cells in the tableview
+            for i in 0..<self.dailyTask.count {
+                self.dailyTask[i].completed = false
+            }
+            
+            for i in 0..<self.weeklyTask.count {
+                self.weeklyTask[i].completed = false
+            }
+            
+            for i in 0..<self.monthlyTask.count {
+                self.weeklyTask[i].completed = false
+            }
+            
+            self.taskTableView.reloadData()
         }
         
-        for i in 0..<self.weeklyTask.count {
-            self.weeklyTask[i].completed = false
+        let noAction = UIAlertAction(title: "No", style: .cancel) {
+            action in
+            print("That was a close one!")
         }
         
-        for i in 0..<self.monthlyTask.count {
-            self.weeklyTask[i].completed = false
-        }
+        //add action to the alert controller
+        confirm.addAction(yesAction)
+        confirm.addAction(noAction)
         
-        taskTableView.reloadData()
+        //show it
+        present(confirm, animated: true, completion: nil)
+        
     }
     
     @IBAction func toggleDarkMode(_ sender: Any) {
         let mySwitch = sender as! UISwitch
+        
+        //this is to change the background color when darkMode switch is toggled
         if mySwitch.isOn {
             view.backgroundColor = UIColor.darkGray
         }else {
@@ -55,10 +79,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func numberOfSections(in tableView: UITableView) -> Int {
         tableView.backgroundColor = UIColor.clear
         
-        return 3
+        return 3 //number of sections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         switch section {
         case 0:
             return dailyTask.count
