@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A5046A62459453A00C07208 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5046A52459453A00C07208 /* Task.swift */; };
 		2A5C47132457DC1E00F0DBF5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C47122457DC1E00F0DBF5 /* SecondViewController.swift */; };
 		2AB8E2A12456904D0048D2D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB8E2A02456904D0048D2D6 /* AppDelegate.swift */; };
 		2AB8E2A32456904D0048D2D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB8E2A22456904D0048D2D6 /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A5046A52459453A00C07208 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		2A5C47122457DC1E00F0DBF5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		2AB8E29D2456904D0048D2D6 /* reminder-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "reminder-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB8E2A02456904D0048D2D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				2AB8E2A42456904D0048D2D6 /* ViewController.swift */,
 				2AB8E2A62456904D0048D2D6 /* Main.storyboard */,
 				2A5C47122457DC1E00F0DBF5 /* SecondViewController.swift */,
+				2A5046A52459453A00C07208 /* Task.swift */,
 				2AB8E2A92456904E0048D2D6 /* Assets.xcassets */,
 				2AB8E2AB2456904E0048D2D6 /* LaunchScreen.storyboard */,
 				2AB8E2AE2456904E0048D2D6 /* Info.plist */,
@@ -143,6 +146,7 @@
 			files = (
 				2A5C47132457DC1E00F0DBF5 /* SecondViewController.swift in Sources */,
 				2AB8E2A52456904D0048D2D6 /* ViewController.swift in Sources */,
+				2A5046A62459453A00C07208 /* Task.swift in Sources */,
 				2AB8E2A12456904D0048D2D6 /* AppDelegate.swift in Sources */,
 				2AB8E2A32456904D0048D2D6 /* SceneDelegate.swift in Sources */,
 			);
